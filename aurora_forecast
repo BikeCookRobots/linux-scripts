@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Based on Bread On Penguin's aurora borealis forecast script. I broke it into multiple parts so that it could work with the "Command Output" widget for KDE Plasma
+
+# this script can be run to display the K-value forecast for the next three days. You may elect to set this as a click action for the Command Output widget
+
+forecast="$HOME/.cache/aurora.txt"
+notify-send -t 30000 -u low -a "Aurora Latest Forecast" "$(tail -n 9 $forecast)" 
+

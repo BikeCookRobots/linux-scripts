@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# this script examines a note that I use as an "inbox" of items to process. The idea here is that the note should always be empty. If it is not, the process echos a message. I have this running in a "Command Output" widget in my top panel
+WARN='\U26A0'
+linecount=$(wc -w ~/path/to/file.md  | awk '{print $1}')
+
+if [[ $linecount -gt 0 ]]
+then
+  echo -e  "${WARN}  Notes must be processed" 
+else
+  echo ""
+fi

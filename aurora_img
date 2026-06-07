@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Based on Bread On Penguin's aurora borealis forecast script. I broke it into multiple parts so that it could work with the "Command Output" widget for KDE Plasma
+
+# this script allows you to view the latest aurora forecast image. I am using feh to create a frameless image, as I couldn't get notify-send to display the image how I wanted
+
+latest="$HOME/.cache/aurora_latest.jpg"
+
+feh -x $latest

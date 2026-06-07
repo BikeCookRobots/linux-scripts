@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# This script re-enables my two peripheral screens. It is called when I jump to my "everyday" activity. This one is a little more complicated because you have to reposition all the monitors again. Use the display configuration settings page to get some of this info
+kscreen-doctor output.2.enable output.1.enable output.2.priority.2 output.1.priority.3 output.2.position.3840,0 output.1.position.0,0 output.3.position.1280,0
+

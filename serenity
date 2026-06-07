@@ -1,0 +1,8 @@
+#!/bin/bash 
+
+# this script will pull a random quote from the zenquotes api, and append it to the .config/serenity/msgs file. It then opens up a website called "MyNoise" to play soothing sounds. Finally, it runs cbonsai (https://gitlab.com/jallbrit/cbonsai) with a random message from the previously written file
+
+curl -s https://zenquotes.io/api/random | grep -oP '(?<="q":")[^"]*' >> .config/serenity/msgs
+xdg-open https://mynoise.net/NoiseMachines/japaneseGardenSoundscapeGenerator.php
+/home/linuxbrew/.linuxbrew/bin/cbonsai -i -l 0.1 -w 200 -m "$(shuf -n 1 ~/.config/serenity/msgs)"
+

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# this script will swap KDE activities and if the activity matches the "Single" mode, it will call the disable-screen script. Otherwise, it ensures all screens are enabled
+
+plasma-activities-cli6 --next-activity
+acti=$(plasma-activities-cli6 --current-activity | cut -d ' ' -f 2)
+
+if [ "${acti}" = "Single" ]; then
+  sh /usr/local/bin/disable-screens
+else
+  sh /usr/local/bin/enable-screens
+fi
+
+

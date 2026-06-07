@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Based on Bread On Penguin's aurora borealis forecast script. I broke it into multiple parts so that it could work with the "Command Output" widget for KDE Plasma
+
+# this script evaluates the forecast and outputs a message if the threshold is reached. This should be the script that is run in Command Output. If can run very infrequently  
+forecast="$HOME/.cache/aurora.txt"
+
+# threshold values
+threshold=3.99
+critical=6.99
+
+value=$(awk '{a[NR]=$3; b=$2} END {val=b
+		for (i=NR-7; i<=NR-4; i++)
+		if (a[i]>val) val=a[i]
+		print val}' $forecast)
+
+if [[ "$value" > "$critical" ]]; then echo "🌈🌈 Kp Index: ${value:0:1}!"
+elif [[ "$value" > "$threshold" ]]; then echo "🌈 Kp Index: ${value:0:1}"
+fi

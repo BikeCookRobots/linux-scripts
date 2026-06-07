@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Based on Bread On Penguin's aurora borealis forecast script. I broke it into multiple parts so that it could work with the "Command Output" widget for KDE Plasma
+
+# This is the main engine for the script. This grabs all the data that we need and stores it. Needs to be run periodically, like with cron
+
+forecasturl="https://services.swpc.noaa.gov/text/3-day-geomag-forecast.txt"
+latesturl="https://services.swpc.noaa.gov/images/animations/ovation/north/latest.jpg"
+forecast="$HOME/.cache/aurora.txt"
+latest="$HOME/.cache/aurora_latest.jpg"
+
+curl -so $forecast $forecasturl 
+curl -so $latest $latesturl  

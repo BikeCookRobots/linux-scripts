@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# This script disables my two peripheral screens. It is called when I jump to my "single screen" activity, for things like movies or single player games
+kscreen-doctor output.2.disable output.1.disable
